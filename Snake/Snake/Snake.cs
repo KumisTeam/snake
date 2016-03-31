@@ -65,6 +65,15 @@ namespace Snake
             }
             else
                 return false;
+        }
+        
+        internal bool IsHitTail()
+        {
+            var head = pList.Last();
+            for (int i = 0; i < pList.Count - 2; i++)
+                if (head.IsHit(pList[i]))
+                    return true;
+            return false;
         } 
     }
 }
